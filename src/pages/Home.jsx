@@ -1,17 +1,19 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 
 export default function Home() {
 
-    const [count, setCount] = useState(25);
+    const navigate = useNavigate();
+    const [count, setCount] = useState(5);
 
     useEffect(() => {
 
         const intervalId = setInterval(() => {
             setCount((prevCount) => {
-                if (prevCount <= 1) {
+                if (prevCount < 1) {
                     clearInterval(intervalId);
-                    return 0;
+                    navigate("/login");
                 }
                 return prevCount - 1;
             });
@@ -19,7 +21,11 @@ export default function Home() {
 
         return () => clearInterval(intervalId)
 
-    }, [])
+    }, [navigate])
+
+    const handleLogout = () => {
+        navigate("/login")
+    }
 
     return (
         <>
@@ -30,7 +36,7 @@ export default function Home() {
                     by the end of this instruction to stop the timer.
                 </h2>
                 <div className="flex justify-center mt-4">
-                    <button className="bg-[#000000] hover:bg-[#505050] text-white font-bold py-2 px-4 rounded">
+                    <button onClick={handleLogout} className="bg-[#000000] hover:bg-[#505050] text-white font-bold py-2 px-4 rounded">
                         Button
                     </button>
                 </div>
