@@ -1,8 +1,6 @@
-# React + Vite
+## Work in Progress
+I have learned about JWT Token before but never implemented it myself.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repo is going to include a simple sign-in page, a landing page where user are required to read some instruction and click a button at the bottom of the message to stay signed in. Or else, the app will automatically sign out for you within a certain period of time.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This little app will also be the first time experimenting with tailwindcss and some other new UI libraries.
